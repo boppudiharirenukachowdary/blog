@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 40px;
+            color: red;
+            font-style:oblique; 
+            
+        }
+
+        h2{
+            text-align: left;
+            font-size: 30px;
+            margin: 25px;
+            margin-left: 10pc;
+            color: blue;
+            font-style: normal;
+        }   
+        p{
+            text-align: left;
+            margin-inline-start: 10pc;
+            font-size: 23px;
+            margin-right: 11pc;
+            font-style: initial;
+        }
+        small,form{
+            margin-left: 10pc;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1><center>RAHUL CHOWDARY</center></h1>
+        {% for i in posts %}
+        
+        <div class="post">
+            <h2>{{ i[1] }}</h2>
+            <center>
+                <img src="https://qph.cf2.quoracdn.net/main-qimg-12105c0aa911f90113a8287cc5a54875" style="width: 25pc ; height: 15pc"/>
+                </center>
+            <p>{{ i[2] }}</p>
+            
+            
+            <small>posted at: {{  i[3]  }}</small>
+            <form method="POST" action="{{url_for('delete_post',id=i[0])}}" onsubmit="return confirm('Are you sure you want to delete this post?');">
+            <button>Delete</button>
+            </form>
+            <form method="GET" action="{{url_for('update_post',id=i[0])}}">
+            <button>Edit</button>
+            </form>
+            
+        </div>
+        {% endfor %}
+   </div>
+   
+   
+</body>
+</html>

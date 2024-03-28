@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            font-size: 2.5pc;
+            color: brown;
+        }
+        input,label,button{
+            font-size: 1.5pc;
+            margin: 0.5pc;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <form method="POST">
+        <h2>update post</h2>
+        <label for="">Title:</label>
+        <input type="text" name="title" value="{{post[1]}}"><br>
+        
+        <label for="">Content:</label>
+        <textarea name="content" rows="5">{{post[5]}}</textarea><br>
+        <label for="">slug:</label>
+        <input type="text"  name="slug"  value="{{post[4]}}"/><br>
+        <button>Update Post</button>
+    </form>
+    </center>
+</body>
+</html>
